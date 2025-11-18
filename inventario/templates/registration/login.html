@@ -1,171 +1,31 @@
+{% extends 'base.html' %}
 {% load bootstrap4 %}
-{% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión - Sistema de Inventario</title>
-    {% bootstrap_css %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-            padding: 20px;
-        }
-        .login-card {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            overflow: hidden;
-            width: 100%;
-            max-width: 400px;
-        }
-        .login-header {
-            background: #343a40;
-            color: white;
-            padding: 25px;
-            text-align: center;
-        }
-        .login-body {
-            padding: 30px;
-        }
-        .btn-login {
-            background: #343a40;
-            border: none;
-            color: white;
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-            transition: all 0.3s;
-        }
-        .btn-login:hover {
-            background: #495057;
-            color: white;
-            transform: translateY(-2px);
-        }
-        .form-control {
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .form-control:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
-        }
-        .alert {
-            border-radius: 8px;
-        }
-    </style>
-</head>
-<body>
-    <div class="login-card">
-        <div class="login-header">
-            <h4 class="mb-0">
-                <i class="fas fa-boxes me-2"></i>Sistema de Inventario
-            </h4>
-            <p class="mb-0 mt-2 opacity-75">Iniciar Sesión</p>
-        </div>
+
+{% block title %}Cerrar sesión{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-5 col-lg-4">
+    <div class="card shadow-lg border-0">
+      <div class="card-header bg-warning text-white text-center">
+        <h4 class="mb-0"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</h4>
+      </div>
+      <div class="card-body text-center">
+        <p class="mb-4">¿Estás seguro de que quieres cerrar sesión?</p>
         
-        <div class="login-body">
-            {% if form.errors %}
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong><i class="fas fa-exclamation-triangle"></i> Error:</strong> Usuario o contraseña incorrectos.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            {% endif %}
-
-            {% if next %}
-                {% if user.is_authenticated %}
-                <div class="alert alert-warning" role="alert">
-                    No tienes acceso a esta página. Por favor inicia sesión con una cuenta que tenga acceso.
-                </div>
-                {% endif %}
-            {% endif %}
-
-            <form method="post" action="{% url 'login' %}">
-                {% csrf_token %}
-                
-                <div class="form-group mb-3">
-                    <label for="id_username" class="form-label">
-                        <i class="fas fa-user me-2"></i>Usuario:
-                    </label>
-                    <input type="text" name="username" class="form-control" id="id_username" 
-                           placeholder="Ingresa tu usuario" required autofocus>
-                </div>
-                
-                <div class="form-group mb-4">
-                    <label for="id_password" class="form-label">
-                        <i class="fas fa-lock me-2"></i>Contraseña:
-                    </label>
-                    <input type="password" name="password" class="form-control" id="id_password" 
-                           placeholder="Ingresa tu contraseña" required>
-                </div>
-
-                <input type="hidden" name="next" value="{{ next }}">
-
-                <button type="submit" class="btn btn-login">
-                    <i class="fas fa-sign-in-alt me-2"></i> Entrar al Sistema
-                </button>
-            </form>
-
-            {% comment %}
-            <!-- Mensaje opcional si quieres mostrar que no hay registro -->
-            <div class="text-center mt-4 pt-3 border-top">
-                <small class="text-muted">
-                    <i class="fas fa-info-circle me-1"></i>
-                    Acceso restringido a usuarios autorizados
-                </small>
-            </div>
-            {% endcomment %}
-        </div>
+        <form method="post" class="form">
+          {% csrf_token %}
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-warning">
+              <i class="fas fa-sign-out-alt"></i> Sí, cerrar sesión
+            </button>
+            <a href="{% url 'productos:producto_list' %}" class="btn btn-secondary">
+              <i class="fas fa-times"></i> Cancelar
+            </a>
+          </div>
+        </form>
+      </div>
     </div>
-
-    {% bootstrap_javascript jquery='full' %}
-    
-    <script>
-        $(document).ready(function() {
-            // Auto-enfocar el campo de usuario
-            $('#id_username').focus();
-            
-            // Efectos de hover en el botón
-            $('.btn-login').hover(
-                function() {
-                    $(this).css('transform', 'translateY(-2px)');
-                },
-                function() {
-                    $(this).css('transform', 'translateY(0)');
-                }
-            );
-            
-            // Validación de campos
-            $('form').on('submit', function(e) {
-                var username = $('#id_username').val();
-                var password = $('#id_password').val();
-                
-                if (!username || !password) {
-                    e.preventDefault();
-                    if (!username) {
-                        $('#id_username').addClass('is-invalid');
-                    }
-                    if (!password) {
-                        $('#id_password').addClass('is-invalid');
-                    }
-                }
-            });
-            
-            // Remover clase de error al escribir
-            $('input').on('input', function() {
-                $(this).removeClass('is-invalid');
-            });
-        });
-    </script>
-</body>
-</html>
+  </div>
+</div>
+{% endblock %}

@@ -327,7 +327,7 @@
   "model": "auth.user",
   "fields": {
     "password": "pbkdf2_sha256$600000$Nkr1osNoZ3GeSFGtJcfTAF$VZZVQQcn0q97NNIY7d2O1VeelKyM7XAwN7qAyGjB1qw=",
-    "last_login": "2025-11-14T22:03:11.417Z",
+    "last_login": "2025-11-18T11:31:26.973Z",
     "is_superuser": true,
     "username": "gigan",
     "first_name": "",
@@ -343,7 +343,7 @@
 {
   "model": "auth.user",
   "fields": {
-    "password": "pbkdf2_sha256$600000$xGehJowkL9Wv8nj8ntQEuG$VCmd9+q/kVBh/PXx4JwHT9eajVlvz190pGQRtiCJXiM=",
+    "password": "pbkdf2_sha256$600000$2BE25ZYMVLWaxa6ARS30Q4$J+6Yty1S7L4fQCWuVC/i1ic4p8eXRsMgwclgQlxI9f8=",
     "last_login": null,
     "is_superuser": false,
     "username": "ronaldproduccion",
@@ -405,8 +405,8 @@
 {
   "model": "auth.user",
   "fields": {
-    "password": "pbkdf2_sha256$600000$lxdn6uXReS1A7KdQHja2bL$CG90z1wGXbYSBBTesdmWmcr6cbDhLWS2hakxhKdsqEE=",
-    "last_login": null,
+    "password": "pbkdf2_sha256$600000$P7hryGILtGnlTgRawRMBtG$lsLsHyxsZbSbjfOsHzJuesF0STh0q8GOpE44O8W6ibs=",
+    "last_login": "2025-11-18T11:48:13.333Z",
     "is_superuser": false,
     "username": "admindavid",
     "first_name": "",
@@ -647,7 +647,7 @@
 {
   "model": "auth.user",
   "fields": {
-    "password": "pbkdf2_sha256$600000$6qInyrAdwvtCdzjKYy62ld$cuZ8EF0WGcBZTRLCEQ48D4hiyUlZAVxnKwjJdFGQ9uE=",
+    "password": "pbkdf2_sha256$600000$guwIvh6CqQdzWv8uaRI78p$HJ4T/5FsTNJplCUMCCiuO8aE7Bs7593fqIXlsjJexOI=",
     "last_login": null,
     "is_superuser": false,
     "username": "venderigna",
@@ -716,6 +716,38 @@
 },
 {
   "model": "sessions.session",
+  "pk": "678p1rliums9kphsygb6gh72u8urunco",
+  "fields": {
+    "session_data": ".eJxVkMluhDAMht_FZ4QSsnNrX6OqkBOcgjoTRiR00WjevWTKhZv1L58t3wFDWLZUBtzKRKnMAcu8pOFKZVrGDP3bHf5n6OGGOX8v6wgNYIGeGy2E4LaTreCOSeEa2DKtCa-0p78ojbTOHwnh8d7Ac8NQ_WGuMAknzWP43Au7gZdLldvjsvaZOezcvpzufD1aJ9SEedo50VtSTntpMEirtFeMOzQRUTAVFXfa-YBeSys748gbpTyazkY7usgYq9BMOdd30M9tXn-hZ48_DW5mjA:1vKl9s:4y-CFOr8TZV0lkav3WmUG1G8OvqTwVmfWPtbSFrSaJY",
+    "expire_date": "2025-11-30T22:23:44.364Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "76bzagnw9hyy1qf6lqkr8hy4xwsa2ik3",
+  "fields": {
+    "session_data": ".eJxVkEFuhDAMRe_iNUKBQBLYtdeoKuQkjkBlEkSCOqPR3L3JlA0by_r_-9nyE9CYcPg04ZFm8mkxmJbgpxulOdgI49cT_nsYYcMYf8NuoQJMMDZScN6qjjc1F4rlvoIj0u7xRjm9B4-r3fZgD2MyE17fFbz3TCU1LQXZwkXTaH7IFwPXtcj1eV_9zpx2rD8u136eUxfUjHHOHCOd1c52GgfqSCgprGBKusaJbmiHnufS9ca2UjniTjesH5jSoiWmrWOmQCPFWJ5C923ZHzCy1x8ITmmD:1vKkH9:tyrXeRboKKx-MUw25Bw_lrRLIItSFHHvxYip_sbCL_0",
+    "expire_date": "2025-11-30T21:27:11.448Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "c9gsy6inqpz0g3ek86c41118eab98xma",
+  "fields": {
+    "session_data": ".eJxVUMuOgzAM_BefEcoDkpZb-xurFTKJI6KWgHDYh6r--zZdLtzsmfHMyA9A5-Yt5R63PFLK0WGOc-onyuPsGbqPB_zP0MGCzN_z6qECzNBJa7RWRtpTLexZNrKpYGNaE070UqOfYvL4FT08Pyt4J_SF72Mx03DABnQ3SoXA-73A9d6sfmt2muvLoed1vzpYjchjCXCNUOeTtWgDiaYl5cyAw2sJxiI6Q0NAQ4akl1poI5RpMbigAnnXqraYMjGXd9DPEtdf6MTzDzDEZ7A:1vKjgo:dKMteOaGg242U2HM_jXO_P6dd1dBVpJuFxNfEyV6uQE",
+    "expire_date": "2025-11-30T20:49:38.119Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "rpjrrz8c7lxrm2nxvohaq5rqwom097v2",
+  "fields": {
+    "session_data": ".eJxVkMluhDAMht_FZ4QSyMqtfY2qQiYxJepMGJHQRaN59yZTLtysf_ls-Q7o3LrHPOKeF4o5OMxhjeOV8rL6BMPbHf5nGOCGKX2vm4cGMMPAtep7I1nHWt1rq7hpYE-0RbxSSX9R9LSFj4jweG_guWGs_hgqTMBJm9B9lkIx8HKpcntc1j4zh53al9Odr0frhFowLYXDvVFOW2KSzZakmTnrrFbKTcoI5DM6S1w5zoUUM_e9l2zqvGXUl5QXukITpVTfQT-3sP3CwB5_-YxmLw:1vKyzs:N9IJX4vH1JED_acKkcTaRmdaldtuk-SM_8bkccnjWNs",
+    "expire_date": "2025-12-01T13:10:20.758Z"
+  }
+},
+{
+  "model": "sessions.session",
   "pk": "y7fh89dhxz0g4csfw7yyys1x6zmb7ccl",
   "fields": {
     "session_data": ".eJxVjMsOwiAQRf-FtSG8QZfu-w1kmAGpGkhKuzL-uzbpQrf3nHNfLMK21riNvMSZ2IVJdvrdEuAjtx3QHdqtc-xtXebEd4UfdPCpU35eD_fvoMKo3zoHmwui01o4S0GhtI6UF8o7mYNwSMVJTMaAIWVDKAG0SYKMtv4sULP3B9Z1N0M:1vJyur:yQGs9LN_oMf4tWl8hz8Rh9Zvkf_DxGcMs3Gh93PzJF8",
@@ -728,6 +760,66 @@
   "fields": {
     "session_data": ".eJxVjMsOwiAURP-FtSG8QXf2R8jlAoHY0ERgZfx3W9OFLufMzHkRD3MUP3t6-hrJjXBy-WUB8JHaUcC6HpgC4jbboN_NWXd631NqoyKMurXlfP2pCvSye5LTKSMaKZnR0Qnk2kRhmbCGJ8cMxmw4BqVARaGdyw6kCiwqqe2VoSTvD65xO7c:1vK1st:i-b8-gAJFIHIRpUaJQCWIfQnVtQfeICpeUgVnikyBzo",
     "expire_date": "2025-11-28T22:03:11.452Z"
+  }
+},
+{
+  "model": "productos.producto",
+  "pk": 2,
+  "fields": {
+    "nombre": "Lomo",
+    "descripcion": "Bife de lomo, tomate , lechuga , jamon, queso y huevo",
+    "precio": "18000.00",
+    "stock": 7,
+    "stock_minimo": 0,
+    "imagen": "productos/43d2fe51-2079-4d2a-94d4-ff64762826cf.png",
+    "fecha_creacion": "2025-11-17T13:09:58.037Z",
+    "fecha_actualizacion": "2025-11-17T13:11:48.172Z",
+    "sku": "LOM"
+  }
+},
+{
+  "model": "productos.movimientostock",
+  "pk": 2,
+  "fields": {
+    "producto": 2,
+    "tipo": "entrada",
+    "cantidad": 8,
+    "motivo": "Stock inicial",
+    "fecha": "2025-11-17T13:09:58.049Z",
+    "usuario": "ronaldproduccion"
+  }
+},
+{
+  "model": "clientes.cliente",
+  "pk": 2,
+  "fields": {
+    "nombre": "Alejo",
+    "apellido": "Sosa",
+    "numero_documento": "3697777",
+    "e_mail": "alejo@itscordoba.edu.ar",
+    "telefono": "3517644958",
+    "direccion": "tilicara 711"
+  }
+},
+{
+  "model": "ventas.venta",
+  "pk": 6,
+  "fields": {
+    "codigo_venta": "VNT-000001",
+    "cliente": 2,
+    "fecha": "2025-11-17T13:11:48.155Z",
+    "total": "18000.00"
+  }
+},
+{
+  "model": "ventas.itemventa",
+  "pk": 6,
+  "fields": {
+    "venta": 6,
+    "producto": 2,
+    "cantidad": 1,
+    "precio_unitario": "18000.00",
+    "subtotal": "18000.00"
   }
 },
 {
@@ -1283,6 +1375,366 @@
       "user"
     ],
     "object_id": "6",
+    "object_repr": "venderigna",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2025-11-14T23:37:10.667Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "4",
+    "object_repr": "venderigna",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2025-11-14T23:37:41.651Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "admindavid",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2025-11-14T23:39:54.576Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "3",
+    "object_repr": "vendedor",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2025-11-14T23:39:58.721Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "2",
+    "object_repr": "stock de productos",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2025-11-14T23:41:26.370Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "4",
+    "object_repr": "venderigna",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2025-11-14T23:41:38.298Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "admindavid",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2025-11-14T23:42:24.597Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "1",
+    "object_repr": "adminitradores",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2025-11-16T22:17:13.791Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "admindavid",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2025-11-16T22:17:47.985Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "ronaldproduccion",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2025-11-16T22:18:10.847Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "4",
+    "object_repr": "venderigna",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2025-11-17T11:25:57.815Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "admindavid",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2025-11-17T11:27:08.567Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "ronaldproduccion",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2025-11-17T11:27:54.593Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "admindavid",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2025-11-17T11:28:55.532Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "4",
+    "object_repr": "venderigna",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2025-11-18T11:15:21.850Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "admindavid",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2025-11-18T11:15:41.817Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "ronaldproduccion",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2025-11-18T11:15:58.665Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "4",
+    "object_repr": "venderigna",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2025-11-18T11:31:43.826Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "admindavid",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2025-11-18T11:32:01.479Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "ronaldproduccion",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2025-11-18T11:32:17.025Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "4",
     "object_repr": "venderigna",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"

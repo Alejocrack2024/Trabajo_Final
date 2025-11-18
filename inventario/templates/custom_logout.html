@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}Sesión cerrada{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+  <div class="col-md-5 col-lg-4">
+    <div class="card shadow-lg border-0 text-center">
+      <div class="card-body">
+        <i class="fas fa-sign-out-alt fa-3x text-info mb-3"></i>
+        <h4 class="card-title">¡Sesión cerrada con éxito!</h4>
+        <p class="card-text">Serás redirigido al login en un momento...</p>
+        <div class="spinner-border text-info" role="status">
+          <span class="sr-only">Cargando...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Redirección automática a los 2 segundos -->
+<meta http-equiv="refresh" content="2; url={% url 'account_login' %}">
+{% endblock %}
