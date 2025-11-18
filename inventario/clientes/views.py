@@ -1,60 +1,74 @@
 from django.shortcuts import render
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib import messages
+from django.http import HttpResponseRedirect
+from django.db.models import ProtectedError
 from .models import Cliente
 from .forms import ClienteForm
-from django.contrib import messages
-from django.urls import reverse_lazy
-from django.db.models import ProtectedError
 
-class ClienteList(ListView):
+# Mixin para permisos de Vendedor
+class VendedorPermissionMixin(PermissionRequiredMixin):
+    """
+    Mixin que permite el acceso si el usuario tiene los permisos requeridos
+    O si pertenece al grupo 'vendedor'.
+    """
+    def has_permission(self):
+        base_permission = super().has_permission()
+        es_vendedor = self.request.user.groups.filter(name='vendedor').exists()
+        return base_permission or es_vendedor
+
+class ClienteList(LoginRequiredMixin, VendedorPermissionMixin, ListView):
     model = Cliente
     template_name = 'clientes/cliente_list.html'
+    permission_required = 'clientes.view_cliente'
+    paginate_by = 10
 
-class ClienteCreate(CreateView):
+class ClienteCreate(LoginRequiredMixin, VendedorPermissionMixin, CreateView):
     model = Cliente
     form_class = ClienteForm
     template_name = 'clientes/cliente_form.html'
     success_url = reverse_lazy('clientes:cliente_list')
+    permission_required = 'clientes.add_cliente'
 
-class ClienteUpdate(UpdateView):
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(self.request, f"Cliente '{self.object}' creado con éxito.")
+        return response
+
+class ClienteUpdate(LoginRequiredMixin, VendedorPermissionMixin, UpdateView):
     model = Cliente
     form_class = ClienteForm
     template_name = 'clientes/cliente_form.html'
     success_url = reverse_lazy('clientes:cliente_list')
+    permission_required = 'clientes.change_cliente'
 
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(self.request, f"Cliente '{self.object}' actualizado con éxito.")
+        return response
 
-# --- VISTA DE BORRADO (AQUÍ ESTÁ LA CORRECCIÓN) ---
-class ClienteDelete(DeleteView):
+class ClienteDelete(LoginRequiredMixin, VendedorPermissionMixin, DeleteView):
     model = Cliente
     template_name = 'clientes/cliente_confirm_delete.html'
-    
-    # URL a la que redirigir si el borrado es exitoso
-    # (También la usamos si falla, para mostrar el mensaje de error)
-    success_url = reverse_lazy('clientes:cliente_list') 
+    success_url = reverse_lazy('clientes:cliente_list')
+    permission_required = 'clientes.delete_cliente'
 
     def post(self, request, *args, **kwargs):
-        """
-        Sobrescribimos el método post para capturar el ProtectedError.
-        """
         self.object = self.get_object()
         
         try:
-            # Intenta borrar el objeto
             response = super().delete(request, *args, **kwargs)
-            
-            # Si tiene éxito, muestra un mensaje de éxito
             messages.success(request, f"Cliente '{self.object}' eliminado con éxito.")
             return response
 
         except ProtectedError:
-            # Si falla por ProtectedError, muestra un mensaje de error
             messages.error(
                 request, 
                 f"No se puede borrar el cliente '{self.object}' porque tiene "
                 f"una o más ventas asociadas."
             )
-            # Redirige de vuelta a la lista (donde se mostrará el mensaje)
             return HttpResponseRedirect(self.get_success_url())
 
     def get_context_data(self, **kwargs):
@@ -62,6 +76,7 @@ class ClienteDelete(DeleteView):
         context['action'] = 'eliminar'
         return context
 
-class ClienteDetail(DetailView):
+class ClienteDetail(LoginRequiredMixin, VendedorPermissionMixin, DetailView):
     model = Cliente
     template_name = 'clientes/cliente_detail.html'
+    permission_required = 'clientes.view_cliente'

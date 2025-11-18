@@ -9,21 +9,9 @@
     {% bootstrap_css %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .navbar-brand {
-            font-weight: bold;
-        }
-        .table-responsive {
-            overflow-x: auto;
-        }
-        .product-img {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-        }
-        .badge-lg {
-            font-size: 0.9rem;
-            padding: 0.35rem 0.65rem;
-        }
+        .navbar-brand { font-weight: bold; }
+        .user-welcome { color: #fff; margin-right: 15px; }
+        .nav-item.disabled { opacity: 0.5; }
     </style>
 </head>
 <body>
@@ -32,52 +20,79 @@
             <a class="navbar-brand" href="{% url 'productos:producto_list' %}">
                 <i class="fas fa-boxes"></i> Sistema de Inventario
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            
+            <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto">
-                    <!-- PRODUCTOS -->
+                    <!-- PRODUCTOS - Solo stock de productos -->
+                    {% if user.is_authenticated and user.groups.all.0.name == 'stock de productos' or user.is_superuser %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'productos:producto_list' %}">
-                            <i class="fas fa-list"></i> Productos
+                            <i class="fas fa-boxes"></i> Productos
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'productos:producto_create' %}">
-                            <i class="fas fa-plus-circle"></i> Nuevo Producto
-                        </a>
+                    {% else %}
+                    <li class="nav-item disabled">
+                        <a class="nav-link text-muted" href="#">Productos</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'productos:stock_bajo_list' %}">
-                            <i class="fas fa-exclamation-triangle"></i> Stock Bajo
-                        </a>
-                    </li>
+                    {% endif %}
+
+                    <!-- CLIENTES - Solo vendedor -->
+                    {% if user.is_authenticated and user.groups.all.0.name == 'vendedor' or user.is_superuser %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'clientes:cliente_list' %}">
-                            <i class="fas fa-users"></i> Lista Clientes
+                            <i class="fas fa-users"></i> Clientes
                         </a>
                     </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'ventas:venta_list' %}">
-                        <i class="fas fa-receipt"></i> Historial Ventas
-                    </a>
-                </li>
+                    {% else %}
+                    <li class="nav-item disabled">
+                        <a class="nav-link text-muted" href="#">Clientes</a>
+                    </li>
+                    {% endif %}
+
+                    <!-- VENTAS - Solo vendedor -->
+                    {% if user.is_authenticated and user.groups.all.0.name == 'vendedor' or user.is_superuser %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'ventas:venta_list' %}">
+                            <i class="fas fa-receipt"></i> Ventas
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item disabled">
+                        <a class="nav-link text-muted" href="#">Ventas</a>
+                    </li>
+                    {% endif %}
                 </ul>
+
+                <!-- SECCIÓN USUARIO - CORREGIDO -->
+                <div class="navbar-nav ml-auto">
+                    {% if user.is_authenticated %}
+                        <span class="navbar-text user-welcome">
+                            <i class="fas fa-user"></i> {{ user.username }}
+                        </span>
+                        <!-- CORRECCIÓN: Cambié 'logout' por 'custom_logout' -->
+                        <form method="post" action="{% url 'custom_logout' %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-outline-light btn-sm">
+                                <i class="fas fa-sign-out-alt"></i> Salir
+                            </button>
+                        </form>
+                    {% else %}
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="fas fa-sign-in-alt"></i> Entrar
+                        </a>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </nav>
 
     <div class="container mt-4">
         {% bootstrap_messages %}
-        
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2>{% block header %}{% endblock %}</h2>
             {% block extra_buttons %}{% endblock %}
         </div>
-        
-        {% block content %}
-        {% endblock %}
+        {% block content %}{% endblock %}
     </div>
 
     {% bootstrap_javascript jquery='full' %}

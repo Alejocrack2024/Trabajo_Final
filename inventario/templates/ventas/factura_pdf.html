@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Factura {{ venta.codigo_venta }}</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+            @bottom-right {
+                content: "Página " counter(page) " de " counter(pages);
+                font-size: 10px;
+                color: #666;
+            }
+        }
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+        }
+        .empresa-info {
+            float: left;
+            width: 50%;
+        }
+        .factura-info {
+            float: right;
+            width: 40%;
+            text-align: right;
+        }
+        .clear {
+            clear: both;
+        }
+        .cliente-info {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .text-right {
+            text-align: right;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .total-section {
+            margin-top: 30px;
+            border-top: 2px solid #333;
+            padding-top: 10px;
+        }
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 10px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo h1 {
+            color: #333;
+            margin: 0;
+            font-size: 24px;
+        }
+        .badge {
+            background: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <span class="badge">FACTURA</span>
+        <h2>COMPROBANTE DE VENTA</h2>
+    </div>
+
+    <div class="factura-info">
+        <h4>Datos del Comprobante</h4>
+        <p><strong>N° Factura:</strong> {{ venta.codigo_venta }}</p>
+        <p><strong>Fecha Emisión:</strong> {{ venta.fecha|date:"d/m/Y" }}</p>
+        <p><strong>Hora:</strong> {{ venta.fecha|date:"H:i" }}</p>
+        <p><strong>Fecha Vencimiento:</strong> {{ venta.fecha|date:"d/m/Y" }}</p>
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="cliente-info">
+        <h4>Datos del Cliente</h4>
+        <p><strong>Nombre/Razón Social:</strong> {{ venta.cliente.nombre }} {{ venta.cliente.apellido|default:"" }}</p>
+        <p><strong>DNI/CUIT:</strong> {{ venta.cliente.dni|default:"No especificado" }}</p>
+        <p><strong>Email:</strong> {{ venta.cliente.email|default:"No especificado" }}</p>
+        <p><strong>Teléfono:</strong> {{ venta.cliente.telefono|default:"No especificado" }}</p>
+        <p><strong>Dirección:</strong> {{ venta.cliente.direccion|default:"No especificado" }}</p>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th width="5%">#</th>
+                <th width="45%">Descripción del Producto</th>
+                <th width="15%" class="text-right">Cantidad</th>
+                <th width="15%" class="text-right">Precio Unitario</th>
+                <th width="20%" class="text-right">Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in venta.items.all %}
+            <tr>
+                <td class="text-center">{{ forloop.counter }}</td>
+                <td>{{ item.producto.nombre }}</td>
+                <td class="text-right">{{ item.cantidad }}</td>
+                <td class="text-right">${{ item.precio_unitario|floatformat:2 }}</td>
+                <td class="text-right">${{ item.subtotal|floatformat:2 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="total-section">
+        <table style="width: 300px; float: right;">
+            <tr>
+                <td class="text-right"><strong>SUBTOTAL:</strong></td>
+                <td class="text-right" style="width: 120px;">
+                    ${{ venta.total|floatformat:2 }}
+                </td>
+            </tr>
+            <tr>
+                <td class="text-right"><strong>IVA (0%):</strong></td>
+                <td class="text-right">$0.00</td>
+            </tr>
+            <tr>
+                <td class="text-right" style="border-top: 1px solid #333;"><strong>TOTAL:</strong></td>
+                <td class="text-right" style="border-top: 1px solid #333;">
+                    <strong>${{ venta.total|floatformat:2 }}</strong>
+                </td>
+            </tr>
+        </table>
+        <div class="clear"></div>
+    </div>
+</body>
+</html>

@@ -21,6 +21,7 @@
                 <td>{{ cliente.nombre }}</td>
                 <td>{{ cliente.apellido }}</td>
                 <td>{{ cliente.numero_documento }}</td>
+                {% include 'paginator.html' %}
                 <td>
                     <a href="{% url 'clientes:cliente_detail' cliente.pk %}" class="btn btn-sm btn-info me-1">Ver</a>
                     <a href="{% url 'clientes:cliente_update' cliente.pk %}" class="btn btn-sm btn-warning me-1">Editar</a>
@@ -34,6 +35,7 @@
     <div class="alert alert-info" role="alert">
         No hay clientes registrados aún. Utiliza el botón **"Crear Nuevo Cliente"** para empezar.
     </div>
+    {% include 'paginator.html' %}
     {% endif %}
 </div>
 {% endblock %}

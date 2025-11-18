@@ -1,10 +1,41 @@
 {% extends 'base.html' %}
+
 {% block content %}
-    <h1>Eliminar producto</h1>
-    <p>¿Estás seguro de que deseas eliminar el coddigo de venta: {{ venta.codigo_venta }}?</p>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Confirmar Eliminación</button>
-        <a href="{% url 'productos:producto_list' %}">Cancelar</a>
-    </form>
-{% endblock content %}
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h2>Eliminar Venta</h2>
+        </div>
+        <div class="card-body">
+            <div class="alert alert-warning">
+                <h5>¿Está seguro de que desea eliminar esta venta?</h5>
+                <p class="mb-0">Esta acción restaurará el stock de los productos vendidos.</p>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5>Detalles de la Venta</h5>
+                    <p><strong>Código:</strong> {{ venta.codigo_venta }}</p>
+                    <p><strong>Cliente:</strong> {{ venta.cliente.nombre }}</p>
+                    <p><strong>Fecha:</strong> {{ venta.fecha|date:"d/m/Y H:i" }}</p>
+                    <p><strong>Total:</strong> ${{ venta.total|floatformat:2 }}</p>
+                    <p><strong>Productos:</strong></p>
+                    <ul>
+                        {% for item in venta.items.all %}
+                        <li>{{ item.producto.nombre }} - {{ item.cantidad }} unidades</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            
+            <form method="post">
+                {% csrf_token %}
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-danger">Sí, Eliminar</button>
+                    <a href="{% url 'ventas:venta_detail' venta.pk %}" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

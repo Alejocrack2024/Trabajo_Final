@@ -1,49 +1,85 @@
 {% extends 'base.html' %}
 
-{% block title %}Detalle de Venta: {{ venta.codigo_venta }}{% endblock title %}
-
 {% block content %}
-<h1 class="mb-4">🧾 Detalle de Venta: {{ venta.codigo_venta }}</h1>
-
-<div class="card shadow-sm mb-4">
-    <div class="card-body">
-        <p><strong>Cliente:</strong> {{ venta.cliente }}</p>
-        <p><strong>Fecha y Hora:</strong> {{ venta.fecha|date:"d/m/Y H:i" }}</p>
-        <p><strong>Total Comprobante:</strong> <span class="h4 badge bg-success">{{ venta.total|floatformat:2 }} Bs.</span></p>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Venta: {{ venta.codigo_venta }}</h2>
+        <div>
+            <a href="{% url 'ventas:venta_pdf' venta.pk %}" class="btn btn-danger">
+                <i class="fas fa-file-pdf"></i> Descargar PDF
+            </a>
+            <a href="{% url 'ventas:venta_factura_html' venta.pk %}" class="btn btn-info">
+                <i class="fas fa-eye"></i> Ver Factura
+            </a>
+            </a>
+            <a href="{% url 'ventas:venta_list' %}" class="btn btn-secondary">Volver al Listado</a>
+        </div>
     </div>
-    <td>
-        <a href="{% url 'ventas:cliente_delete' pk=venta.pk %}" class="btn btn-sm btn-info">Eliminar</a>
-    </td>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Información de la Venta</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-borderless">
+                        <tr>
+                            <th>Código:</th>
+                            <td>{{ venta.codigo_venta }}</td>
+                        </tr>
+                        <tr>
+                            <th>Cliente:</th>
+                            <td>{{ venta.cliente.nombre }}</td>
+                        </tr>
+                        <tr>
+                            <th>Fecha:</th>
+                            <td>{{ venta.fecha|date:"d/m/Y H:i" }}</td>
+                        </tr>
+                        <tr>
+                            <th>Total:</th>
+                            <td><strong>${{ venta.total|floatformat:2 }}</strong></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-header">
+            <h5>Productos Vendidos</h5>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio Unitario</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in venta.items.all %}
+                        <tr>
+                            <td>{{ item.producto.nombre }}</td>
+                            <td>{{ item.cantidad }}</td>
+                            <td>${{ item.precio_unitario|floatformat:2 }}</td>
+                            <td>${{ item.subtotal|floatformat:2 }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr class="table-active">
+                            <th colspan="3" class="text-end">Total:</th>
+                            <th>${{ venta.total|floatformat:2 }}</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
-
-<h2 class="mt-4">Productos Vendidos</h2>
-
-{% if venta.items.all %}
-    <table class="table table-bordered table-striped">
-        <thead>
-            <tr>
-                <th>Producto</th>
-                <th>Cantidad</th>
-                <th>Precio Unitario (Bs.)</th>
-                <th>Subtotal (Bs.)</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in venta.items.all %}
-            <tr>
-                <td>{{ item.producto.nombre }}</td>
-                <td>{{ item.cantidad }}</td>
-                <td>{{ item.precio_unitario|floatformat:2 }}</td>
-                <td>{{ item.subtotal|floatformat:2 }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-{% else %}
-    <div class="alert alert-warning">Esta venta no tiene ítems.</div>
-{% endif %}
-
-<div class="mt-4">
-    <a href="{% url 'ventas:venta_list' %}" class="btn btn-secondary">Volver al Listado</a>
-</div>
-{% endblock content %}
+{% endblock %}

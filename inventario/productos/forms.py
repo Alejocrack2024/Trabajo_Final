@@ -1,18 +1,12 @@
-# Importaciones necesarias de Django y Crispy Forms
 from django import forms
 from django.core.exceptions import ValidationError
-# Importamos los modelos para los formularios basados en modelos
 from .models import Producto, MovimientoStock
-# Importamos las herramientas de Crispy Forms
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Row, Column, Submit, Reset, ButtonHolder, Field, Div, HTML
 from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
-# Importamos nuestro helper base para no repetir código
 from .crispy import BaseFormHelper
 
-# -----------------------------------------------------------------------------
-# Formulario para el modelo Producto
-# -----------------------------------------------------------------------------
+
 class ProductoForm(forms.ModelForm):
     """
     Formulario para la creación y edición de productos.
@@ -22,8 +16,9 @@ class ProductoForm(forms.ModelForm):
         # Vinculamos este formulario al modelo Producto
         model = Producto
         # Especificamos los campos que se incluirán en el formulario
-        fields = ["nombre", "sku", "descripcion", "stock", "stock_minimo", "precio"]
+        fields = ["nombre", "sku", "descripcion", "stock", "stock_minimo", "precio", "imagen"]
         # Usamos widgets para personalizar la apariencia de los campos HTML
+
         widgets = {
             "descripcion": forms.Textarea(attrs={"rows": 3}),  # Cambia el campo de texto a un área de texto más grande
         }
@@ -62,9 +57,7 @@ class ProductoForm(forms.ModelForm):
             )
         )
 
-    # --------------------------------------------------------------------------
-    # Validaciones personalizadas a nivel de campo
-    # --------------------------------------------------------------------------
+    
     def clean_precio(self):
         # Obtiene el dato del formulario después de la limpieza inicial de Django
         precio = self.cleaned_data.get("precio")
@@ -86,9 +79,7 @@ class ProductoForm(forms.ModelForm):
             raise ValidationError("No puede haber valor negativo de stock minimo")
         return stock_minimo
     
-# -----------------------------------------------------------------------------
-# Formulario para el modelo MovimientoStock
-# -----------------------------------------------------------------------------
+
 class MovimientoStockForm(forms.ModelForm):
     """
     Formulario para registrar entradas o salidas de stock.
@@ -133,9 +124,6 @@ class MovimientoStockForm(forms.ModelForm):
             )
         )
 
-    # --------------------------------------------------------------------------
-    # Validaciones personalizadas
-    # --------------------------------------------------------------------------
     def clean_cantidad(self):
         cantidad = self.cleaned_data.get("cantidad")
         if cantidad <= 0:
@@ -149,9 +137,7 @@ class MovimientoStockForm(forms.ModelForm):
                 )
         return cantidad
         
-# -----------------------------------------------------------------------------
-# Formulario para ajustar el stock a un valor específico
-# -----------------------------------------------------------------------------
+
 class AjusteStockForm(forms.Form):
     """
     Formulario genérico para ajustar el stock de un producto.
@@ -195,10 +181,6 @@ class AjusteStockForm(forms.Form):
                 HTML('<a href="{{ request.META.HTTP_REFERER }}" class="btn btn-secondary">Cancelar</a>')
             )
         )
-
-# -----------------------------------------------------------------------------
-# Helpers y formularios para filtros
-# -----------------------------------------------------------------------------
 
 # Helper específico para formularios de filtro en línea
 class FiltroFormHelper(FormHelper):

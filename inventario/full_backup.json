@@ -1,0 +1,1291 @@
+[
+{
+  "model": "auth.group",
+  "fields": {
+    "name": "adminitradores",
+    "permissions": [
+      [
+        "add_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "change_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "delete_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "view_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "add_group",
+        "auth",
+        "group"
+      ],
+      [
+        "change_group",
+        "auth",
+        "group"
+      ],
+      [
+        "delete_group",
+        "auth",
+        "group"
+      ],
+      [
+        "view_group",
+        "auth",
+        "group"
+      ],
+      [
+        "add_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "change_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "delete_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "view_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "add_user",
+        "auth",
+        "user"
+      ],
+      [
+        "change_user",
+        "auth",
+        "user"
+      ],
+      [
+        "delete_user",
+        "auth",
+        "user"
+      ],
+      [
+        "view_user",
+        "auth",
+        "user"
+      ],
+      [
+        "add_cliente",
+        "clientes",
+        "cliente"
+      ],
+      [
+        "change_cliente",
+        "clientes",
+        "cliente"
+      ],
+      [
+        "delete_cliente",
+        "clientes",
+        "cliente"
+      ],
+      [
+        "view_cliente",
+        "clientes",
+        "cliente"
+      ],
+      [
+        "add_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "change_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "delete_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "view_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "add_movimientostock",
+        "productos",
+        "movimientostock"
+      ],
+      [
+        "change_movimientostock",
+        "productos",
+        "movimientostock"
+      ],
+      [
+        "delete_movimientostock",
+        "productos",
+        "movimientostock"
+      ],
+      [
+        "view_movimientostock",
+        "productos",
+        "movimientostock"
+      ],
+      [
+        "add_producto",
+        "productos",
+        "producto"
+      ],
+      [
+        "change_producto",
+        "productos",
+        "producto"
+      ],
+      [
+        "delete_producto",
+        "productos",
+        "producto"
+      ],
+      [
+        "view_producto",
+        "productos",
+        "producto"
+      ],
+      [
+        "add_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "change_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "delete_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "view_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "add_itemventa",
+        "ventas",
+        "itemventa"
+      ],
+      [
+        "change_itemventa",
+        "ventas",
+        "itemventa"
+      ],
+      [
+        "delete_itemventa",
+        "ventas",
+        "itemventa"
+      ],
+      [
+        "view_itemventa",
+        "ventas",
+        "itemventa"
+      ],
+      [
+        "add_venta",
+        "ventas",
+        "venta"
+      ],
+      [
+        "change_venta",
+        "ventas",
+        "venta"
+      ],
+      [
+        "delete_venta",
+        "ventas",
+        "venta"
+      ],
+      [
+        "view_venta",
+        "ventas",
+        "venta"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "fields": {
+    "name": "stock de productos",
+    "permissions": [
+      [
+        "add_movimientostock",
+        "productos",
+        "movimientostock"
+      ],
+      [
+        "change_movimientostock",
+        "productos",
+        "movimientostock"
+      ],
+      [
+        "delete_movimientostock",
+        "productos",
+        "movimientostock"
+      ],
+      [
+        "view_movimientostock",
+        "productos",
+        "movimientostock"
+      ],
+      [
+        "add_producto",
+        "productos",
+        "producto"
+      ],
+      [
+        "change_producto",
+        "productos",
+        "producto"
+      ],
+      [
+        "delete_producto",
+        "productos",
+        "producto"
+      ],
+      [
+        "view_producto",
+        "productos",
+        "producto"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "fields": {
+    "name": "vendedor",
+    "permissions": [
+      [
+        "add_itemventa",
+        "ventas",
+        "itemventa"
+      ],
+      [
+        "change_itemventa",
+        "ventas",
+        "itemventa"
+      ],
+      [
+        "delete_itemventa",
+        "ventas",
+        "itemventa"
+      ],
+      [
+        "view_itemventa",
+        "ventas",
+        "itemventa"
+      ],
+      [
+        "add_venta",
+        "ventas",
+        "venta"
+      ],
+      [
+        "change_venta",
+        "ventas",
+        "venta"
+      ],
+      [
+        "delete_venta",
+        "ventas",
+        "venta"
+      ],
+      [
+        "view_venta",
+        "ventas",
+        "venta"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$Nkr1osNoZ3GeSFGtJcfTAF$VZZVQQcn0q97NNIY7d2O1VeelKyM7XAwN7qAyGjB1qw=",
+    "last_login": "2025-11-14T22:03:11.417Z",
+    "is_superuser": true,
+    "username": "gigan",
+    "first_name": "",
+    "last_name": "",
+    "email": "alejo.sosa@itscordoba.edu.ar",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-11-01T20:22:18Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$xGehJowkL9Wv8nj8ntQEuG$VCmd9+q/kVBh/PXx4JwHT9eajVlvz190pGQRtiCJXiM=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ronaldproduccion",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-11T22:34:09Z",
+    "groups": [
+      [
+        "stock de productos"
+      ]
+    ],
+    "user_permissions": [
+      [
+        "add_movimientostock",
+        "productos",
+        "movimientostock"
+      ],
+      [
+        "change_movimientostock",
+        "productos",
+        "movimientostock"
+      ],
+      [
+        "delete_movimientostock",
+        "productos",
+        "movimientostock"
+      ],
+      [
+        "view_movimientostock",
+        "productos",
+        "movimientostock"
+      ],
+      [
+        "add_producto",
+        "productos",
+        "producto"
+      ],
+      [
+        "change_producto",
+        "productos",
+        "producto"
+      ],
+      [
+        "delete_producto",
+        "productos",
+        "producto"
+      ],
+      [
+        "view_producto",
+        "productos",
+        "producto"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$lxdn6uXReS1A7KdQHja2bL$CG90z1wGXbYSBBTesdmWmcr6cbDhLWS2hakxhKdsqEE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "admindavid",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-13T12:19:35Z",
+    "groups": [
+      [
+        "adminitradores"
+      ]
+    ],
+    "user_permissions": [
+      [
+        "add_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "change_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "delete_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "view_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "add_group",
+        "auth",
+        "group"
+      ],
+      [
+        "change_group",
+        "auth",
+        "group"
+      ],
+      [
+        "delete_group",
+        "auth",
+        "group"
+      ],
+      [
+        "view_group",
+        "auth",
+        "group"
+      ],
+      [
+        "add_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "change_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "delete_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "view_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "add_user",
+        "auth",
+        "user"
+      ],
+      [
+        "change_user",
+        "auth",
+        "user"
+      ],
+      [
+        "delete_user",
+        "auth",
+        "user"
+      ],
+      [
+        "view_user",
+        "auth",
+        "user"
+      ],
+      [
+        "add_cliente",
+        "clientes",
+        "cliente"
+      ],
+      [
+        "change_cliente",
+        "clientes",
+        "cliente"
+      ],
+      [
+        "delete_cliente",
+        "clientes",
+        "cliente"
+      ],
+      [
+        "view_cliente",
+        "clientes",
+        "cliente"
+      ],
+      [
+        "add_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "change_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "delete_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "view_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "add_movimientostock",
+        "productos",
+        "movimientostock"
+      ],
+      [
+        "change_movimientostock",
+        "productos",
+        "movimientostock"
+      ],
+      [
+        "delete_movimientostock",
+        "productos",
+        "movimientostock"
+      ],
+      [
+        "view_movimientostock",
+        "productos",
+        "movimientostock"
+      ],
+      [
+        "add_producto",
+        "productos",
+        "producto"
+      ],
+      [
+        "change_producto",
+        "productos",
+        "producto"
+      ],
+      [
+        "delete_producto",
+        "productos",
+        "producto"
+      ],
+      [
+        "view_producto",
+        "productos",
+        "producto"
+      ],
+      [
+        "add_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "change_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "delete_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "view_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "add_itemventa",
+        "ventas",
+        "itemventa"
+      ],
+      [
+        "change_itemventa",
+        "ventas",
+        "itemventa"
+      ],
+      [
+        "delete_itemventa",
+        "ventas",
+        "itemventa"
+      ],
+      [
+        "view_itemventa",
+        "ventas",
+        "itemventa"
+      ],
+      [
+        "add_venta",
+        "ventas",
+        "venta"
+      ],
+      [
+        "change_venta",
+        "ventas",
+        "venta"
+      ],
+      [
+        "delete_venta",
+        "ventas",
+        "venta"
+      ],
+      [
+        "view_venta",
+        "ventas",
+        "venta"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$6qInyrAdwvtCdzjKYy62ld$cuZ8EF0WGcBZTRLCEQ48D4hiyUlZAVxnKwjJdFGQ9uE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "venderigna",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-13T12:21:04Z",
+    "groups": [
+      [
+        "vendedor"
+      ]
+    ],
+    "user_permissions": [
+      [
+        "add_itemventa",
+        "ventas",
+        "itemventa"
+      ],
+      [
+        "change_itemventa",
+        "ventas",
+        "itemventa"
+      ],
+      [
+        "delete_itemventa",
+        "ventas",
+        "itemventa"
+      ],
+      [
+        "view_itemventa",
+        "ventas",
+        "itemventa"
+      ],
+      [
+        "add_venta",
+        "ventas",
+        "venta"
+      ],
+      [
+        "change_venta",
+        "ventas",
+        "venta"
+      ],
+      [
+        "delete_venta",
+        "ventas",
+        "venta"
+      ],
+      [
+        "view_venta",
+        "ventas",
+        "venta"
+      ]
+    ]
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "6096ep6t1x1gspog933h5vcnx3ne47rp",
+  "fields": {
+    "session_data": ".eJxVjDsOwyAQBe9CHSFY87FSps8Z0C4LwUkEkrErK3ePLblI2pl5bxMB16WEtac5TCyuQovLLyOMr1QPwU-sjyZjq8s8kTwSedou743T-3a2fwcFe9nXagA0PAAT-6z0SMZGJpetNoigB9RoGZQnq10ED5DcGP1Olc-G2IrPF-FxN9E:1vFI7f:MKx6i3yXdk-BgEWiJdhQ1F90Qy6ia_grTosCsjQ8N0c",
+    "expire_date": "2025-11-15T20:22:51.060Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "y7fh89dhxz0g4csfw7yyys1x6zmb7ccl",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSG8QZfu-w1kmAGpGkhKuzL-uzbpQrf3nHNfLMK21riNvMSZ2IVJdvrdEuAjtx3QHdqtc-xtXebEd4UfdPCpU35eD_fvoMKo3zoHmwui01o4S0GhtI6UF8o7mYNwSMVJTMaAIWVDKAG0SYKMtv4sULP3B9Z1N0M:1vJyur:yQGs9LN_oMf4tWl8hz8Rh9Zvkf_DxGcMs3Gh93PzJF8",
+    "expire_date": "2025-11-28T18:53:01.303Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "yekm5moha856geg6uxp0artp1a2s4rah",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAURP-FtSG8QXf2R8jlAoHY0ERgZfx3W9OFLufMzHkRD3MUP3t6-hrJjXBy-WUB8JHaUcC6HpgC4jbboN_NWXd631NqoyKMurXlfP2pCvSye5LTKSMaKZnR0Qnk2kRhmbCGJ8cMxmw4BqVARaGdyw6kCiwqqe2VoSTvD65xO7c:1vK1st:i-b8-gAJFIHIRpUaJQCWIfQnVtQfeICpeUgVnikyBzo",
+    "expire_date": "2025-11-28T22:03:11.452Z"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-11-01T20:24:36.432Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "1",
+    "object_repr": "adminitradores",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2025-11-01T20:26:19.772Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "2",
+    "object_repr": "stock de productos",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2025-11-01T20:26:45.611Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "3",
+    "object_repr": "ventas",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2025-11-01T20:26:56.602Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "1",
+    "object_repr": "adminitradores",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2025-11-01T20:27:03.794Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "2",
+    "object_repr": "stock de productos",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2025-11-11T21:36:24.344Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "1",
+    "object_repr": "adminitradores",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2025-11-11T21:37:49.840Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "4",
+    "object_repr": "vendedor",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2025-11-11T21:38:03.434Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "3",
+    "object_repr": "ventas",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2025-11-11T21:38:15.274Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "4",
+    "object_repr": "vendedor",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2025-11-11T21:57:30.470Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "3",
+    "object_repr": "ventas",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2025-11-11T21:57:36.607Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "4",
+    "object_repr": "vendedor",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2025-11-11T22:33:14.270Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "sistema25",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2025-11-11T22:33:31.804Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "sistema25",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2025-11-11T22:34:09.856Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "ronald19",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2025-11-11T22:34:56.058Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "ronaldproduccion",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Username\", \"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2025-11-11T22:36:16.606Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "4",
+    "object_repr": "davidadm",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2025-11-11T22:37:47.775Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "4",
+    "object_repr": "davidadm",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2025-11-11T22:38:15.325Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "4",
+    "object_repr": "davidadm",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2025-11-11T22:38:30.315Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "sistema25",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2025-11-13T12:19:36.261Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "5",
+    "object_repr": "admindavid",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2025-11-13T12:20:11.384Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "5",
+    "object_repr": "admindavid",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2025-11-13T12:21:05.243Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "6",
+    "object_repr": "venderigna",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2025-11-13T12:21:16.506Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "6",
+    "object_repr": "venderigna",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2025-11-13T12:21:26.025Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "5",
+    "object_repr": "admindavid",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2025-11-13T12:45:40.038Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "5",
+    "object_repr": "admindavid",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2025-11-13T12:46:03.734Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "ronaldproduccion",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2025-11-13T12:46:27.271Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "6",
+    "object_repr": "venderigna",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2025-11-14T18:47:00.511Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "1",
+    "object_repr": "gigan",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2025-11-14T18:50:36.868Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "5",
+    "object_repr": "admindavid",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2025-11-14T18:51:16.946Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "ronaldproduccion",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2025-11-14T18:52:00.447Z",
+    "user": [
+      "gigan"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "6",
+    "object_repr": "venderigna",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+}
+]

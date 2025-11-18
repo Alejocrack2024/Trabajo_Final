@@ -1,3 +1,65 @@
-venv/
+#Django
 *.pyc
-*.sql
+*~
+__pycache__/
+*sqlite3
+*.log
+local_settings.py
+db.sqlite3
+.env
+.env.*
+!.env_example
+
+#Virtaul environment
+venv/
+env/
+VIRTUAL_ENV/
+
+#Static files
+staticfiles/
+media/
+assets/
+
+#IDE
+.idea/
+.vscode/
+.vs/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage reports
+.coverage
+htmlcov/
+.coverage.*
+.coverage*
+
+# Distribution / builds
+dist/
+build/
+*.egg-info/
+*.eggs
+*.pot
+
+#PyInstaller
+*.spec
+
+#Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+#Unit test / coverage reports
+.tox/
+.pytext_cache/

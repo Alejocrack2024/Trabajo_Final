@@ -1,8 +1,6 @@
 # clientes/models.py
 from django.db import models
-
-class Cliente(models.Model):
-    from django.db import models
+from django.db import models
 from django.urls import reverse
 
 class Cliente(models.Model):

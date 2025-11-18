@@ -76,6 +76,12 @@
         </tbody>
     </table>
 </div>
+
+<!-- AQUÍ VA LA PAGINACIÓN -->
+{% block pagination %}
+    {% include 'paginator.html' %}
+{% endblock %}
+
 {% else %}
 <div class="alert alert-info">
     <i class="fas fa-info-circle"></i> No hay productos registrados.
